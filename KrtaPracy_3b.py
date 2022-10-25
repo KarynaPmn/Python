@@ -63,14 +63,8 @@ for i in range(0,n9):
     print(k9)
     suma9 += k9
     k9 += 100
-
-
-from math import sqrt
-
-print("Zadanie 10")
-for i in range(1,100):
-    sqrt(i) % i == 0
-
+    
+    
 from math import sqrt
 
 
