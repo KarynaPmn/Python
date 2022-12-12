@@ -6,7 +6,7 @@
 #   x + n // 10
 # print(suma)
 
-print("Zadanie 2")
+print("Zadanie 3")
 n = int(input())
 suma = 0
 
