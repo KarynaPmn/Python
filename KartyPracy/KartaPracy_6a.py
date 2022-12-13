@@ -106,3 +106,20 @@ while 1:
         if n == 0:
             break
     x = x + 1
+    
+print("Zadanie 10")
+flaga = True
+n = int(input("Podaj liczbę bliźniaczą: "))
+x = n + 2
+for i in range(2, n):
+    if n % i == 0:
+        flaga = False
+if flaga == False:
+    print("Liczba nie jest pierwsza.")
+
+if flaga:
+    for j in range(2, x):
+        if x % j != 0:
+            flaga = True
+    if flaga:
+        print(f"Liczba bliźniacza to: {x}")
