@@ -12,8 +12,10 @@
 # for i in range(2, n):
 #   if n % i == 0:
 #     flaga = False
-# if flaga:
+# if flaga or n != 1:
 #   print("Liczba jest piewsza.")
+# else:
+#   print("Liczba nie jest pierwszą.")
 
 # print("Zadanie 3")
 # n = int(input())
