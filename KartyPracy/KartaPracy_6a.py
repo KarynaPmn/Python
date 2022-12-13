@@ -39,4 +39,14 @@ if x == 1:
 else:
     print("Liczby nie są względem siebie pierwsze.")
 
+print("Zadanie 5")
 
+a = int(input())
+
+for b in range(10, 19):
+    x = a
+    y = b
+    while y > 0:
+        x, y = y, x % y
+    if x == 1:
+        print(f"Liczba {b} jest względnie pierwsza do liczby {a}.")
