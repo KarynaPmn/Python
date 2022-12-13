@@ -2,8 +2,8 @@
 # x = int(input())
 # suma = 0
 # while x > 0:
-#   suma += n % 10
-#   x + n // 10
+#   suma += x % 10
+#   x = x // 10
 # print(suma)
 
 # print("Zadanie 2")
