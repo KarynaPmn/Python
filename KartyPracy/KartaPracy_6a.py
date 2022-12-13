@@ -50,3 +50,21 @@ for b in range(10, 19):
         x, y = y, x % y
     if x == 1:
         print(f"Liczba {b} jest względnie pierwsza do liczby {a}.")
+
+print("Zadanie 6")
+
+a, b = int(input()), int(input())
+m = a
+s = 0
+
+if a > b:
+    m = a % b
+    s += a // b
+    if m == 0:
+        print(f"{a}/{b} = {s}")
+    else:
+        print(f"{a}/{b} = {s} {m}/{b}")
+elif a == b:
+        print(f"{a}/{b} = 1")
+else:
+    print(f"{a}/{b} nie da się skrócić.")
