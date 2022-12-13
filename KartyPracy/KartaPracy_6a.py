@@ -88,3 +88,21 @@ elif a == b:
         print(f"{a}/{b} = 1")
 else:
     print(f"{a}/{b} nie da się skrócić.")
+    
+ print("Zadanie 9")
+
+n = int(input("Podaj ile chcesz liczb prewiepierwszych: "))
+flaga = True
+
+x = 2
+while 1:
+    flaga = True
+    for i in range(2, int(x**0.5)+1):
+        if x % i == 0:
+            flaga = False
+    if flaga:
+        print(x * 2, end=" " )
+        n = n - 1
+        if n == 0:
+            break
+    x = x + 1
