@@ -54,6 +54,26 @@ for b in range(10, 19):
 print("Zadanie 6")
 
 a, b = int(input()), int(input())
+x = a
+y = b
+
+while y > 0:
+    x, y = y, x % y
+
+i = a // x
+m = b // x
+
+if m == 1:
+    print(f"{a}/{b} = {i}")
+else:
+    if a == i:
+        print(f"{a}/{b} nie da się skrócić.")
+    else:
+        print(f"{a}/{b} = {i}/{m}")
+        
+print("Zadanie 7")
+
+a, b = int(input()), int(input())
 m = a
 s = 0
 
