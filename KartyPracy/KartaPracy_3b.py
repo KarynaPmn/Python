@@ -35,15 +35,13 @@ for i in range(0, k6):
 print(suma6)
 
 print("Zadanie 7")
-m7 = int(input("Podaj liczbę dwucfrową:"))
-suma7 = 0
-if m7 >= 10 and m7 < 100:
-    for i in range(10,m7):
-        if i % 2 == 1:
-            suma7 += i
-    print(suma7) 
-else:
-    print("Liczba nie jest dwucyfrowa.")
+
+m = int(input("Ile liczb:"))
+suma = 0
+
+for i in range(11, m * 2 + 10, 2):
+    suma += i
+print(suma)
 
 print("Zadanie 8")
 W = int(input("Podaj kwotę: "))
