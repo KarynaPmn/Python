@@ -73,5 +73,4 @@ for i in range(1, 1000):
         print(i)
     elif i % 100 == sqrt(i):
         print(i)
-    elif i % 1000 == sqrt(i):
-        print(i)
+
