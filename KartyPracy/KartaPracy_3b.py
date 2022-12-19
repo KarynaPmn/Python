@@ -61,7 +61,7 @@ for i in range(0,n9):
     print(k9)
     suma9 += k9
     k9 += 100
-    print(f"Suma: {suma9}")
+print(f"Suma: {suma9}")
     
     
 from math import sqrt
