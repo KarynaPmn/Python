@@ -137,6 +137,45 @@ for i in range(n9):
 print("=", iloczyn9)
 print()
 
+print("Zadanie 10")
 
+n10 = int(input("Ile liczb silni: "))
+suma10 = 0
+
+for i in range(1, n10 + 1):
+    silnia = 1
+    for j in range(1, i + 1):
+        silnia *= j
+    suma10 += silnia
+print(f"Suma silni: {suma10}")
+print()
+
+print("Zadanie 11")
+
+n11 = int(input("Ciąg niebanalny. Ile elementów: "))
+suma11 = 0
+d11 = 1
+q11 = 0
+
+for i in range(1, n11 + 1):
+    q11 = i * i
+    suma11 += d11 / q11
+    print(f"{d11}/{q11} + ")
+    d11 += 2
+print("Suma", round(suma11, 2))
+print()
+
+print("Zadanie 12")
+
+n12 = int(input("Ciąg niebanalny 2. Ile liczb: "))
+suma12 = 0
+suma12_q = 0
+suma12_d = 0
+
+for i in range(1, n12 + 1):
+    suma12_d += i * 2 - 1
+    suma12_q += i * i
+print(f"{suma12_d} / {suma12_q} = {round(suma12_d / suma12_q, 2)}")
+print()
 
 
