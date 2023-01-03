@@ -206,3 +206,19 @@ for i in range(1, n15 + 1):
     q15 += pow(2, i)
 print(f"... = {round(iloczyn15, 2)}")
 print()
+
+print("Zadanie 16")
+
+n16 = int(input("Ciąg ekstremalny. Ile liczb: "))
+iloczyn16 = 1
+temp16 = 0
+a16 = 0
+b16 = 1
+
+for i in range(1, n16 + 1):
+    temp16 = a16
+    a16 = b16
+    b16 += temp16
+    iloczyn16 *= b16 / (pow(2, i) / 2)
+    print(f"{b16}\{round(pow(2, i) / 2, None)} * ", end='')
+print(f" ... = {round(iloczyn16, 2)}")
