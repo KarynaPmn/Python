@@ -193,3 +193,16 @@ for i in range(1, n13 + 1):
     q13 += temp13 * 6 + 1
 print(f"... = {round(suma13,2)}")
 print()
+
+print("Zadanie 15")
+
+n15 = int(input("Ciąg totalny. Ile liczb: "))
+q15 = 1
+iloczyn15 = 1
+
+for i in range(1, n15 + 1):
+    iloczyn15 *= (i + 2) / q15
+    print(f"{i + 2}/{q15} + ", end="")
+    q15 += pow(2, i)
+print(f"... = {round(iloczyn15, 2)}")
+print()
