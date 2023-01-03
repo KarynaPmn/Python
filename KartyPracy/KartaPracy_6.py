@@ -179,3 +179,17 @@ print(f"{suma12_d} / {suma12_q} = {round(suma12_d / suma12_q, 2)}")
 print()
 
 
+print("Zadanie 13")
+
+n13 = int(input("Ciąg wymagający. Ile liczb: "))
+suma13 = 0
+temp13 = 0
+q13 = 3
+
+for i in range(1, n13 + 1):
+    suma13 += i * 2 / q13
+    print(f"{i * 2}/{q13} + ", end="")
+    temp13 += i
+    q13 += temp13 * 6 + 1
+print(f"... = {round(suma13,2)}")
+print()
