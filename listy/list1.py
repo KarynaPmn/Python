@@ -35,7 +35,7 @@ print(K.count(7))
 #index() - zwraca gdzie jest pierwszy element
 print(K.index(7))
 
-#insert() - 
+#insert() - wstawia element do listy pod określonym indeksem.
 K.insert(2, 4)
 print(K)
 
@@ -47,7 +47,7 @@ print(K)
 K.pop()
 print(K)
 
-#reverse()
+#reverse() - odwraca elementy listy
 K.reverse()
 print(K)
 
