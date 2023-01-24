@@ -190,3 +190,26 @@ for i in range(len(T)):
     if element != 1:
         ile_element_usun_2 += 1
 print(f"Trzeba usunąć {ile_element_usun_2} aby zostały tylko unikalne wartości.")
+
+
+temp = 0
+ciag = 0
+C = []
+for i in range(len(T)):
+    if temp + 1 == T[i]:
+        ciag += 1
+    elif temp == T[i]: 
+        C.append(ciag)
+        ciag = 0
+    else: 
+        C.append(ciag)
+        ciag = 0
+    temp = T[i]
+    
+print()
+
+print(f"Ciąg: {C}")
+
+print()
+
+print(f"15) Maksymalna długość ciągu: {max(C)}; Pozycja: {C.index(max(C))} ciąg.")
