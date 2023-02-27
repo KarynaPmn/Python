@@ -192,24 +192,31 @@ for i in range(len(T)):
 print(f"Trzeba usunąć {ile_element_usun_2} aby zostały tylko unikalne wartości.")
 
 
-temp = 0
-ciag = 0
+# Zad 
+
+import random
+T = []
+
+for i in range(40):
+    T.append(random.randint(10, 99))
+print(T)
+print()
+
 C = []
-for i in range(len(T)):
-    if temp + 1 == T[i]:
-        ciag += 1
-    elif temp == T[i]: 
-        C.append(ciag)
-        ciag = 0
-    else: 
-        C.append(ciag)
-        ciag = 0
-    temp = T[i]
-    
-print()
+I = []
+ile = 1
 
-print(f"Ciąg: {C}")
+for i in range(len(T) - 1):
+	if T[i] < T[i + 1]:
+		ile += 1
+	else:
+		C.append(ile)
+		ile = 1
+		
+print(C)
+print(C.index(max(C)))
 
-print()
-
-print(f"15) Maksymalna długość ciągu: {max(C)}; Pozycja: {C.index(max(C))} ciąg.")
+for i in range(len(C)):
+	if C[i] == max(C):
+		I.append(i)
+print(f"Maks ciąg: {max(C)}, pozycja: {I}")
