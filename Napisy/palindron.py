@@ -54,3 +54,16 @@ print(L[6 : 1 : -2])
 print(L[:1 : -2 ])
 
 
+// MY /////////////
+
+# 1
+s = str(input())
+t = True
+
+for i in range(len(s) // 2):
+    if s[i] != s[len(s) - 1 - i]:
+        print("NIE")
+        break
+    else:
+        print("TAK")
+
