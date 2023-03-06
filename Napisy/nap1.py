@@ -23,12 +23,34 @@
 
 # sprawź czy wpisane słowo jest palindromen
 
-r = input()
-R = list(r) 
-L = R.copy()
-R.reverse() # [g, n, i, r, t, s]
-print(L, R)
-if L == R:
-	print("Jest palindronem.") #oko
-else:
-	print("Nie jest palindronem.") 
+# r = input()
+# R = list(r) 
+# L = R.copy()
+# R.reverse() # [g, n, i, r, t, s]
+# print(L, R)
+# if L == R:
+# 	print("Jest palindronem.") #oko
+# else:
+# 	print("Nie jest palindronem.") 
+
+# # sprawdzanie palidroma za pomocą listy
+# s = input()
+# for i in range(len(s)//2):
+# 	if s[i] != s[len(s) - 1 - i]:
+# 		# s[:i + 1] != s[:len(s) - 1 :: - i]
+# 		exit("NIE")
+# exit("Tak")
+
+L = [ i**2 for i in range(1, 10)]
+print(L)
+# L[start : stop : step]
+print(L[:4]) # Wypisze 4 pierwsze elementy
+print(L[::2]) # Co dwa elementy
+print(L[1 :: 2])
+print(L[::- 1]) # Wypisze malejąco
+print(L[1 : 6 : 2])
+print(L[1 : 6 : -2])
+print(L[6 : 1 : -2])
+print(L[:1 : -2 ])
+
+
