@@ -1,26 +1,7 @@
-import random
-T = []
+#  1. Wczytaj dowolny napis i wypisz z niego pierwszą i ostatnią literkę
 
-for i in range(40):
-    T.append(random.randint(10, 99))
-print(T)
-print()
+n_1 = str(input('Podaj napis: '))
+print(f"{n_1[0]} i {n_1[-1]}" )
 
-C = []
-I = []
-ile = 1
+# 2. Wczytaj dowolny napis i wypisz z niego literki bez pierwszej i ostatniej
 
-for i in range(len(T) - 1):
-	if T[i] < T[i + 1]:
-		ile += 1
-	else:
-		C.append(ile)
-		ile = 1
-		
-print(C)
-print(C.index(max(C)))
-
-for i in range(len(C)):
-	if C[i] == max(C):
-		I.append(i)
-print(f"Maks: {max(C)}, pozycja: {I}")
