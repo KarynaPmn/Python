@@ -17,7 +17,7 @@
 #   szyfr += chr(ord(napis[i]) + 3)
 
 
-// 
+##
 
 napis = input()
 szyfr = ""
