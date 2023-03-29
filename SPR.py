@@ -59,3 +59,37 @@
 # print(literka, maksi)
 
 # 7. Znajdź literkę-dominantę w napisie (może ich być kilka, a może nie być żadnej)
+
+def czyJestPierwszyNiezerowy(L):
+	for x in L:
+		if 0 < L.count(x) < max(L):
+			return True
+	return False
+
+g = input("Wpisz: ")
+K = [0] * 100
+for x in g:
+	K[ord(x)] += 1
+print(K)
+domikand = max(K)
+
+if sum(K) == max(K):
+	print(f"Dominanta: {chr(K.index(max(K)))}")
+elif not czyJestPierwszyNiezerowy(K):
+	print("Brak dominanty")
+else: 
+	D = []
+	for x in range(len(K)):
+		if K[x] == max(K):
+			D.append(chr(x))
+	print("Dominanty:", ", ".join(D)) 
+
+# 8. Sprawdź czy w napisie występują trzy podciągi "LA"
+# TIP: h[i:i+2] == "LA"
+
+# 9. Znajdź "średnią literkę" w napisie. (Przejdź na kody ASCII i jeśli wynik będzie ułamkowy to zaokrąglij średnią w dół) <można zrobić wersję w górę>
+
+# 10. Wypisz literki, których nie ma w napisie
+
+# 11. Znajdź ilość trzyznakowych palindromów w napisie (trzy literki koło siebie)
+# TIP: funkcja palindrom[]
