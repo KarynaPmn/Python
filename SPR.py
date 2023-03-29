@@ -10,7 +10,7 @@
 # print(n_2[1 : len(n_2) - 1])
 # for i in range(1, len(b) - 1):
 # 	print(n_2, end=' ')
-	
+
 # 3. Wypisz 4 ostatnie literki z wpisanego napisy w kolejności od końca
 
 # c = input()
@@ -47,8 +47,15 @@
 
 # 6. Podaj dominującą literkę we wpisanym napisie. Niech to będzie tylko jedna literka.
 
-n = input()
-ilosc = 0
+# n = input("Wpisz: ")
+# maksi = 0
+# literka = ""
 
-for i in n:
-	if 
+# for i in n:
+# 	if n.count(i) > maksi:
+# 		maksi = n.count(i)
+# 		literka = i
+
+# print(literka, maksi)
+
+# 7. Znajdź literkę-dominantę w napisie (może ich być kilka, a może nie być żadnej)
