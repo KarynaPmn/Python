@@ -102,6 +102,18 @@ print(PociagLA(h))
 
 # 9. Znajdź "średnią literkę" w napisie. (Przejdź na kody ASCII i jeśli wynik będzie ułamkowy to zaokrąglij średnią w dół) <można zrobić wersję w górę>
 
+n = input()
+suma = 0
+
+for i in n:
+    suma += ord(i)
+    print(ord(i), end=" ")
+print(" = ", suma)
+
+srednia = suma // len(n)
+
+print("Średnia: ", srednia)
+
 # 10. Wypisz literki, których nie ma w napisie
 
 # 11. Znajdź ilość trzyznakowych palindromów w napisie (trzy literki koło siebie)
