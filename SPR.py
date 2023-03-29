@@ -36,11 +36,19 @@
 
 # 5. Policz ile we wpisanym napisie jest liter A.
 
-e = input()
-s = 0
+# e = input()
+# s = 0
 
-for i in e:
-	if i == "a":
-		s += 1
+# for i in e:
+# 	if i == "a":
+# 		s += 1
 
-print(s)
+# print(s)
+
+# 6. Podaj dominującą literkę we wpisanym napisie. Niech to będzie tylko jedna literka.
+
+n = input()
+ilosc = 0
+
+for i in n:
+	if 
