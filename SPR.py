@@ -87,7 +87,32 @@ else:
 # 8. Sprawdź czy w napisie występują trzy podciągi "LA"
 # TIP: h[i:i+2] == "LA"
 
+def PociagLA(n):
+    ile = 0
+    for i in range(len(n)):
+        if n[i : i + 2] == "LA": 
+            ile += 1
+    if ile == 3:
+        return print("Tak")
+    else:
+        return print("Nie")
+
+h = input()
+print(PociagLA(h))
+
 # 9. Znajdź "średnią literkę" w napisie. (Przejdź na kody ASCII i jeśli wynik będzie ułamkowy to zaokrąglij średnią w dół) <można zrobić wersję w górę>
+
+n = input()
+suma = 0
+
+for i in n:
+    suma += ord(i)
+    print(ord(i), end=" ")
+print(" = ", suma)
+
+srednia = suma // len(n)
+
+print("Średnia: ", srednia)
 
 # 10. Wypisz literki, których nie ma w napisie
 
