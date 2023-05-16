@@ -1,6 +1,6 @@
 # Diagnoza INF
 
-# - WSTĘP
+### WSTĘP ###
 # 1. Oblicz sumę liczb 3-cyfrowych
 suma_1 = 0
 for i in range(100, 1000):
@@ -42,13 +42,64 @@ while n_5 > 0:
 	n_5 //= 10
 print(f"5. {mini_5}")
 
-# - ALGORYTMY
-# 1. Sprawdź czy wpisana przez usera liczba jest pierwsza
-# 2. Sprawdź czy wpisana przez usera liczba jest złożona
-# 3. Sprawdź czy wpisana przez usera liczba jest względnie pierwsza z 24
+### ALGORYTMY ###
 
+a = 13 #int(input("Podaj liczbę: "))
+
+# 1. Sprawdź czy wpisana przez usera liczba jest pierwsza
+def CzyPierwsza(a):
+	for i in range(2, a // 2 + 1):
+		if (a % i == 0):
+			return False
+		else:
+			return True
+if CzyPierwsza(a) == True:
+	print("1) Liczba jest pierwsza.")
+else:
+	print("1) Liczba nie jest pierwsza.")
+
+# 2. Sprawdź czy wpisana przez usera liczba jest złożona
+if CzyPierwsza(a) == False:
+	print("2) Podana liczba jest złożona.")
+else:
+	print("2) Podana liczba nie jest złożona.")
+	
+# 3. Sprawdź czy wpisana przez usera liczba jest względnie pierwsza z 24
+b = 24
+while b > 0:
+	a, b = b, a % b
+if a == 1:
+	print("3) Liczba jest względnie pierwsza z 24")
+else:
+	print("3) Liczba nie jest względnie pierwsza z 24")
+	
 # 4. Zakoduj szyfrem CEZARA i kluczem k słowo s.
+	
 # 5. Dodaj dwa ułamki a/b + c/d. Zapisz sumę jako ułamek nieskracalny i liczbę mieszaną.
+a, b, c, d = map(int, input("Podaj: ").split())
+if b != d:
+	x = b
+	y = d 
+	nww = b * d
+	while b > 0:
+		a, b = b, a % b
+	nww /= a
+	x_b = nww / x
+	y_d = nww / y
+
+def NWD(d, q):
+	while q > 0:
+		d, q = q, d % q
+	return d
+
+if NWD((a * x_b) + (c * y_d), nww) > 1:
+	nwd = NWD((a * x_b) + (c * y_d), nww)
+	print(f"{a}/{x} + {c}/{y} = {a * x_b}/{nww} + {c * y_d}/{nww} = {(a * x_b) + (c * 	y_d)}/{nww} = {((a * x_b) + (c * 	y_d)) / nwd}/{nww / nwd}")
+else:
+	print(f"{a}/{x} + {c}/{y} = {a * x_b}/{nww} + {c * y_d}/{nww} = {(a * x_b) + (c * y_d)}/{nww}")
+	
+	
+	
 # 6. Znajdź NWW dwóch wpisanych przez usera liczb
 
 # - KARTKA
