@@ -1,6 +1,7 @@
-# Diagnoza INF
+### Diagnoza INF ###
 
 ### WSTĘP ###
+
 # 1. Oblicz sumę liczb 3-cyfrowych
 suma_1 = 0
 for i in range(100, 1000):
@@ -74,40 +75,101 @@ else:
 	print("3) Liczba nie jest względnie pierwsza z 24")
 	
 # 4. Zakoduj szyfrem CEZARA i kluczem k słowo s.
+klucz = 5
+s = input()
+szyfr = ""
+for i in range(len(s)):
+    szyfr = szyfr + chr(65 + (ord(s[i]) - 65 + klucz) % 26)
+print(s, szyfr)
 	
 # 5. Dodaj dwa ułamki a/b + c/d. Zapisz sumę jako ułamek nieskracalny i liczbę mieszaną.
 a, b, c, d = map(int, input("Podaj: ").split())
-if b != d:
-	x = b
-	y = d 
-	nww = b * d
-	while b > 0:
-		a, b = b, a % b
-	nww /= a
-	x_b = nww / x
-	y_d = nww / y
-
+def NWW(x, y):
+	if x != y:
+		nww = x * y
+		while y > 0:
+			x, y = y, x % y
+		nww /= x
+		return int(nww)
+nww = NWW(b, d) 	
 def NWD(d, q):
 	while q > 0:
 		d, q = q, d % q
 	return d
 
-if NWD((a * x_b) + (c * y_d), nww) > 1:
-	nwd = NWD((a * x_b) + (c * y_d), nww)
-	print(f"{a}/{x} + {c}/{y} = {a * x_b}/{nww} + {c * y_d}/{nww} = {(a * x_b) + (c * 	y_d)}/{nww} = {((a * x_b) + (c * 	y_d)) / nwd}/{nww / nwd}")
+if b != d:
+	a_nww = int(a * (nww / b))
+	c_nww = int(c * (nww / d))
+	suma_a = a_nww + c_nww
+	skrot_a = int(suma_a / NWD(suma_a, nww))
+	skrot_nww = int(nww / NWD(suma_a, nww))
+	if skrot_a == skrot_nww:
+		print(f"{a}/{b} + {c}/{d} = {a_nww}/{nww} + {c_nww}/{nww} = {suma_a}/{nww} = {1}")
+	elif skrot_a > skrot_nww:
+		if skrot_nww == 1:
+			print(f"{a}/{b} + {c}/{d} = {a_nww}/{nww} + {c_nww}/{nww} = {suma_a}/{nww} = {skrot_a}/{skrot_nww} = {skrot_a}")
+		else:
+					print(f"{a}/{b} + {c}/{d} = {a_nww}/{nww} + {c_nww}/{nww} = {skrot_a}/{skrot_nww} = {skrot_a // skrot_nww}  {skrot_a % skrot_nww}/{nww}")
 else:
-	print(f"{a}/{x} + {c}/{y} = {a * x_b}/{nww} + {c * y_d}/{nww} = {(a * x_b) + (c * y_d)}/{nww}")
+	suma_a = a + c
+	if NWD(suma_a, b) != 1:
+		skrot_a = int(suma_a / NWD(suma_a, b))
+		skrot_nww = int(nww / NWD(suma_a, b))
+		if skrot_a > skrot_nww:
+			print(f"{a}/{b} + {c}/{d} = {suma_a}/{b} = {skrot_a}/{skrot_nww} = {skrot_a // skrot_nww}  {skrot_a % skrot_nww}/{skrot_nww}")
+		else:
+			print(f"{a}/{b} + {c}/{d} = {suma_a}/{b} = {skrot_a}/{skrot_nww}")
+	else:
+		if a > b:
+			print(f"{a}/{b} + {c}/{d} = {suma_a}/{b} = {suma_a // b}  {suma_a % b}/{b}")
+		else:
+			print(f"{a}/{b} + {c}/{d} = {suma_a}/{b}")
 	
-	
-	
-# 6. Znajdź NWW dwóch wpisanych przez usera liczb
+ # 6. Znajdź NWW dwóch wpisanych przez usera liczb
+a, b = map(int, input("Podaj: ").split())
 
-# - KARTKA
+def NWW(a, b):
+	iloczyn = a * b
+	while b > 0:
+		a, b = b, a % b
+	nww = int(iloczyn / a)
+	return nww
+	
+print(NWW(a, b))
+
+### KARTKA ###
 # 1. Oblicz wartość ONP - 8822+/234*---
 # 2. Znajdź postać ONP dla pisanego wyrażenia - (3+8)/4-6*(3*4/2)
 # 3. Napisz na kartce algorytm NWD (obie wersje) i przeprowadz symulacje kroków dla podanych liczb - dowolny i a=35 b=56
 
-# - NAPISY
+### NAPISY ###
 # 1. Znajdź ilość liter C we wpisanym napisie
+napis_1 = "CYC"
+ile_c = 0
+for x in napis_1:
+	if x == "C":
+		ile_c += 1
+print(f"C: {ile_c}")
+
 # 2. Sprawdź czy literki w napisie są w porządku nierosnącym: np ZOO, WOK, WODA itp
+napis_2 = "WODA"
+flaga = True
+for i in range(1, len(napis_2)):
+	if ord(napis_2[i]) > ord(napis_2[i - 1]):
+		flaga = False
+		break			
+if flaga == True: 
+	print("Literki w napisie są w porządku nierosnącym")
+else:
+	print("NIE")
+	
 # 3. Podaj najdłuższy z 3 wpisanych przez usera wyrazów.
+dlugosc_wyraz = 0
+najw_wyraz = ""
+for i in range(3):
+	wyraz = input("Podaj: ")
+	if len(wyraz) > dlugosc_wyraz:
+		dlugosc_wyraz = len(wyraz)
+		najw_wyraz = wyraz
+print(f"Najdłuższy wyraz to: {najw_wyraz}")
+
