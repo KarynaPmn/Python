@@ -7,7 +7,7 @@ print(f"Pierwsza: {napis[0]} i ostatnia: {napis[-1]}")
 print(napis[1 : -1])
 
 # 3. Wypisz 4 ostatnie literki z wpisanego napisy w kolejności od końca
-print(napis[-1 : 3 : -1])
+print(napis[-1 : -5 : -1])
 
 # 4. Waga napisu to suma kodów ascii jego liter. Zważ wpisany napis
 WagaNapisu = 0
