@@ -97,34 +97,16 @@ def NWD(d, q):
 		d, q = q, d % q
 	return d
 
-if b != d:
-	a_nww = int(a * (nww / b))
-	c_nww = int(c * (nww / d))
-	suma_a = a_nww + c_nww
-	skrot_a = int(suma_a / NWD(suma_a, nww))
-	skrot_nww = int(nww / NWD(suma_a, nww))
-	if skrot_a == skrot_nww:
-		print(f"{a}/{b} + {c}/{d} = {a_nww}/{nww} + {c_nww}/{nww} = {suma_a}/{nww} = {1}")
-	elif skrot_a > skrot_nww:
-		if skrot_nww == 1:
-			print(f"{a}/{b} + {c}/{d} = {a_nww}/{nww} + {c_nww}/{nww} = {suma_a}/{nww} = {skrot_a}/{skrot_nww} = {skrot_a}")
-		else:
-					print(f"{a}/{b} + {c}/{d} = {a_nww}/{nww} + {c_nww}/{nww} = {skrot_a}/{skrot_nww} = {skrot_a // skrot_nww}  {skrot_a % skrot_nww}/{nww}")
+a_nww = int(a * (nww / b))
+c_nww = int(c * (nww / d))
+suma_a = a_nww + c_nww
+k = suma_a // nww
+l = suma_a % nww
+if suma_a < nww:
+	print(f"{a}/{b} + {c}/{d} = {a_nww}/{nww} + {c_nww}/{nww} = {suma_a}/{nww}")
 else:
-	suma_a = a + c
-	if NWD(suma_a, b) != 1:
-		skrot_a = int(suma_a / NWD(suma_a, b))
-		skrot_nww = int(nww / NWD(suma_a, b))
-		if skrot_a > skrot_nww:
-			print(f"{a}/{b} + {c}/{d} = {suma_a}/{b} = {skrot_a}/{skrot_nww} = {skrot_a // skrot_nww}  {skrot_a % skrot_nww}/{skrot_nww}")
-		else:
-			print(f"{a}/{b} + {c}/{d} = {suma_a}/{b} = {skrot_a}/{skrot_nww}")
-	else:
-		if a > b:
-			print(f"{a}/{b} + {c}/{d} = {suma_a}/{b} = {suma_a // b}  {suma_a % b}/{b}")
-		else:
-			print(f"{a}/{b} + {c}/{d} = {suma_a}/{b}")
-	
+	print(f"{a}/{b} + {c}/{d} = {a_nww}/{nww} + {c_nww}/{nww} = {suma_a}/{nww} = {k} {l}/{nww}")
+
  # 6. Znajdź NWW dwóch wpisanych przez usera liczb
 a, b = map(int, input("Podaj: ").split())
 
