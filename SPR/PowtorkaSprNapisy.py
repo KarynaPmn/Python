@@ -62,6 +62,28 @@ elif ile_la == 0:
 else:
     print(f"LA wustępuje {ile_la} raz.")
 
+### sprawdź czy podany przez usera pociąg jest w napisie ###
+pociag = "MMA"
+ile_pociag = 0
+for i in range(len(napis)):
+    flaga = False
+    if napis[i] == pociag[0] and i + len(pociag) < len(napis):
+        t = i
+        for j in range(len(pociag)):
+            if napis[t] == pociag[j]:
+                flaga = True
+            else:
+                flaga = False
+                break
+            t += 1
+    if flaga == True:
+        ile_pociag += 1
+            
+if ile_pociag > 0:
+    print(f"występuje {ile_pociag} razy.")
+else:
+    print(f"Nie.")   
+    
 # 9. Znajdź "średnią literkę" w napisie. (Przejdź na kody ASCII i jeśli wynik będzie ułamkowy to zaokrąglij średnią w dół)
 from math import floor
 srednia = 0
