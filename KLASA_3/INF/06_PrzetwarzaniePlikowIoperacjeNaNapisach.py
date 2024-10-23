@@ -73,18 +73,40 @@ def Zad_4():
 
 # Zad 5 -- Nie zakończone !!!
 def Zad_5():
+    def IleLiter(text): # Dopisać!
+        
     plik = open("slowa.txt", "r")
-    Slowa = plik.readlines()
+    Slowa = list(map(str, plik.readlines()))
 
-    print("1. wyświetli ponumerowane słowa z pliku tekstowego")
-    print("2. wyświetli liczbę słów w pliku")
-    print("3. wyświetli słowa zaczynające się na literę A")
-    print("4. wyświetli słowa kończące się na literę A")
-    print("5. wyświetli słowa oraz liczbę liter, z których się składają")
-    print("6. *wyświetli najkrótsze oraz najdłuższe słowo w pliku oraz ich długość (jeżeli jest ich kilka wyświetl pierwsze z nich)")
-    print("7. wyświetli słowa o długości 6")
-    print("8. wyświetli słowa zawierające literę O oraz dla każdego z tych słów liczbę tych liter O")
-    print("9. wyświetli ile razy w całym pliku występuje litera A")
+    print("1. Wyświetl ponumerowane słowa z pliku tekstowego")
+    print("2. Wyświetl liczbę słów w pliku")
+    print("3. Wyświetl słowa zaczynające się na literę A")
+    print("4. Wyświetl słowa kończące się na literę A")
+    print("5. wyświetl słowa oraz liczbę liter, z których się składają")
+    print("6. *wyświetl najkrótsze oraz najdłuższe słowo w pliku oraz ich długość (jeżeli jest ich kilka wyświetl pierwsze z nich)")
+    print("7. wyświetl słowa o długości 6")
+    print("8. wyświetl słowa zawierające literę O oraz dla każdego z tych słów liczbę tych liter O")
+    print("9. wyświetl ile razy w całym pliku występuje litera A")
     number = input("Podaj wybór: ")
 
+    if number == 1:
+        for i in range(len(Slowa)):
+            print(f"{i + 1}.) {Slowa[i]}")
+    elif number == 2:
+        print(len(Slowa))
+    elif number == 3:
+        for word in Slowa:
+            if word[1] == "a":
+                print(word, end=" ")
+    elif number == 4:
+        for word in Slowa:
+            if word[-1] == "a":
+                print(word, end=" ")
+    elif number == 5: # Nie zakończone
+        for i in range(len(Slowa)):
+            print(f"{i + 1}.) {Slowa[i]} -- {IleLiter(Slowa[i)}")
+
+
     plik.close()
+
+Zad_5()
