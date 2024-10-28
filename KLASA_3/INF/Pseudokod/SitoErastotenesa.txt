@@ -1,0 +1,16 @@
+Algorythm (Sieve of Erastosthenesa):
+    dla i = 1, 2, 3... n wykonuj:
+        czyPierwsza[i] = prawda
+    czyPierwsza[0] ← fałsz
+    czyPierwsza[1] ← fałsz
+    
+    p ← 2
+    dopóki p * p <= n + 1:
+        jeżeli czyPierwsza[p] = prawda to:
+            dla i = p + p, p * (p + 1)... n wykonuj:
+                czyPierwsza[i] = fałsz
+        p ← p + 1
+
+    dla i = 1, 2, 3... n wykonuj:
+        jeżeli czyPierwsza[i] = prawda to:
+            wypisz i
