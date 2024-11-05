@@ -1,3 +1,4 @@
+# SPOSÓB 1
 def Scal(T, lewy, srodek, prawy):
     i = lewy
     j = srodek + 1
@@ -33,35 +34,34 @@ def Sortuj(T, lewy, prawy):
         Sortuj(T, srodek + 1, prawy)
         Scal(T, lewy, srodek, prawy)
 
-def Scal2(T):
-    if len(T) > 1:
-        mid = len(T) // 2
-        L = T[:mid]
-        R = T[mid:]
-        
-        Scal2(L)
-        Scal2(R)
-
-        i = j = k = 0
-
-        while i < len(L) and j < len(R):
-            if L[i] < R[j]:
-                T[k] = L[i]
-                i += 1
-            else:
-                T[k] = R[j]
-                j += 1
-            k += 1
-
-        while i < len(L):
-            T[k] = L[i]
+# SPOSÓB 2
+def Scal_1(T1, T2):
+    wynik = []
+    i = 0
+    j = 0
+    n1 = len(T1)
+    n2 = len(T2)
+    while i < n1 and j < n2:
+        if T1[i] < T2[j]:
+            wynik.append(T1[i])
             i += 1
-            k += 1
-
-        while j < len(R):
-            T[k] = R[j]
+        else:
+            wynik.append(T2[j])
             j += 1
-            k += 1
+    wynik.extend(T1[i:])
+    wynik.extend(T2[j:])
+    return wynik
+
+def SortowaniePrzezScalanie(T):
+    n = len(T)
+    if n > 1:
+        srodek = (n - 1) // 2
+        lewy = SortowaniePrzezScalanie(T[:srodek + 1])
+        prawy = SortowaniePrzezScalanie(T[srodek + 1:])
+        return Scal_1(lewy,prawy)
+    return T
+
+    # pass --> instrukcja pusta
 
 # Zad 1
 def Zad_1():
@@ -70,4 +70,11 @@ def Zad_1():
     Sortuj(T, 0, len(T) - 1)
     print(T)
 
-Zad_1()
+def Zad():
+    T = list(map(int, input("Podaj ciąg: ").split(" ")))
+
+    print(T)
+    print(SortowaniePrzezScalanie(T))
+
+
+# Zad 2
