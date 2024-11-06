@@ -1,3 +1,5 @@
+import random
+
 # SPOSÓB 1
 def Scal(T, lewy, srodek, prawy):
     i = lewy
@@ -78,3 +80,25 @@ def Zad():
 
 
 # Zad 2
+def Zad_2():
+    plik = open("ciagi.txt", "r")
+    Ciag_1 = list(map(int, plik.readline().split()))
+    Ciag_2 = list(map(int, plik.readline().split()))
+
+    print(Ciag_1)
+    print(Ciag_2)
+    plik.close()
+
+    plik = open("wyniki_2.txt", "w")
+    wynik = Scal_1(Ciag_1, Ciag_2)
+    plik.write(" ".join(map(str, wynik)))
+    plik.close()
+
+# Zad 3
+def Zad_3():
+    Liczby = [random.randint(1, 1000000) for i in range(1000000)]
+    Liczby = SortowaniePrzezScalanie(Liczby)
+
+    with open("wyniki_3.txt", "w") as plik:
+        for e in Liczby:
+            plik.write(f"{e}\n")
