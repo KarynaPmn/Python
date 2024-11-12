@@ -1,0 +1,19 @@
+def SchematHornera(W, x):
+    stopienWielomianu = len(W) - 1
+    wynik = W[0]
+    potega = 1
+
+    for i in range(1, stopienWielomianu):
+        potega *= x
+        wynik += W[i] * potega
+
+    return wynik
+
+# Zad 1
+def Zad_1():
+    Wspolczynniki = list(map(int, input("Podaj: ").split(" ")))
+    x = int(input("Podaj x: "))
+
+    print(SchematHornera((Wspolczynniki, x)))
+
+Zad_1()
