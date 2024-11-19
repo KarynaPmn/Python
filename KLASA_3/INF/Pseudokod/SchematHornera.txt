@@ -1,0 +1,15 @@
+--- Przykład 1. Kodu naiwnego -----
+
+y ⬅ A[n]
+potega ⬅ 1
+
+dla i ⬅ n - 1, n - 2, ..., 0 wykonuj
+    potega ⬅ potega * x
+    y ⬅ y + A[i] * potega
+
+
+--- Przykład 2. ze zmienioną specyfikacją -----
+
+y ⬅ A[0]
+dla i 1, 2, ..., n wykonuj
+    y ⬅ x * y + A[i]
