@@ -68,6 +68,7 @@ def Zad_3():
 
     print(SchematHorneraReku(Wspolczynniki, x))
 
+# Zad 5
 def Zad_5_1():
     Wspolczynniki = list(map(int, input("Podaj: ").split(" ")))
     x = int(input("Podaj x: "))
@@ -79,3 +80,32 @@ def Zad_5_2():
     x = int(input("Podaj x: "))
 
     print(SchematHorneraOdwroconaWersja_2(Wspolczynniki, x))
+
+# Zad 6
+def Zad_6():
+    liczbaBinarna = input("Podaj liczbę binarną: ")
+
+    print(BinarnyNaDziesietnySchematHornera(liczbaBinarna))
+
+def BinarnyNaDziesietnySchematHornera(x):
+    wynik = 0
+
+    for i in range(len(x)):
+        wynik = wynik * 2 + int(x[i])
+
+    return wynik
+
+# Zad 7
+def Zad_7():
+    liczba = input("Podaj liczbę w systemie o podstawie: ")
+    podstawa = int(input("Podaj podstawę: "))
+
+    print(LiczbaPodstawieNaDziesietnySchematHornera(liczba, podstawa))
+
+def LiczbaPodstawieNaDziesietnySchematHornera(x, podstawa):
+    wynik = 0
+
+    for i in range(len(x)):
+        wynik = wynik * podstawa + int(x[i])
+
+    return wynik
