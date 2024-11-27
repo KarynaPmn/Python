@@ -31,7 +31,7 @@ def Zad_2(Ciag):
         for i in range(indexPocz, n + 1):
             WyswietlLiczbyPoSpacji(Ciag[indexPocz : i])
 
-# Zad 3 !!! nie dokończone
+# Zad 3 
 def SumaCyfr(s):
     suma = 0
 
@@ -46,9 +46,9 @@ def Zad_3(Ciag):
     n = len(Ciag)
 
     for indexPocz in range(n - 4):
-        for i in range(indexPocz, indexPocz + 6):
+        for i in range(indexPocz + 1, indexPocz + 6):
             print(SumaCyfr(Ciag[indexPocz: i]), end=" - ")
             WyswietlLiczbyPoSpacji(Ciag[indexPocz : i])
 
-# Zad 4 
+# Zad 4
 Zad_3(Ciag)
