@@ -98,20 +98,7 @@ def Zad_10():
     else:
         print("Nie")
 
-# Zad 11 -- Nie dziła poprawnie!
-def NajdluzszyCiagJestRosnacy(C):
-    N = []
-    Temp = []
-
-    for i in range(len(C) - 1):
-        if C[i] < C[i + 1]:
-            Temp.append(C[i])
-        else:
-            if len(Temp) > len(N):
-                N = Temp
-            Temp = []
-    return N
-
+# Zad 11
 def NajdluzszyCiagJestRosnacy_1(C):
     aktualnaDlugosc = 1
     maksDlugosc = 0
@@ -128,9 +115,24 @@ def NajdluzszyCiagJestRosnacy_1(C):
     return maksDlugosc
 
 def Zad_11():
-    print(len(NajdluzszyCiagJestRosnacy(Ciag)))
     print(NajdluzszyCiagJestRosnacy_1(Ciag))
 
 # Zad 12
+def NajdluzszyCiagJestRosnacy(C):
+    aktualnaDlugosc = 1
+    maksDlugosc = 0
+    n = len(C)
+    p = 0
+
+    for i in range(1, n):
+        if C[i] >= C[i - 1]:
+            aktualnaDlugosc += 1
+            if aktualnaDlugosc > maksDlugosc:
+                p = i - maksDlugosc
+                maksDlugosc = aktualnaDlugosc
+        else:
+            aktualnaDlugosc = 1
+
+    return C[p : p + maksDlugosc]
 def Zad_12():
     print(NajdluzszyCiagJestRosnacy(Ciag))
