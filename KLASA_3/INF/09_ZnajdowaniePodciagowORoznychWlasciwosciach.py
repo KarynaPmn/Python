@@ -140,7 +140,7 @@ def Zad_12():
     print(NajdluzszyCiagJestRosnacy(Ciag))
 plik.close()
 
-# Zadania maturalne
+### ZADANIA MATURALNE ###
 plik = open("pi.txt", "r")
 LiczbyPi = list(map(int, plik.read().split()))
 
