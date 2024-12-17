@@ -136,19 +136,19 @@ def NajdluzszyCiagJestRosnacy(C):
     return C[p : p + maksDlugosc]
 def Zad_12():
     print(NajdluzszyCiagJestRosnacy(Ciag))
+plik.close()
 
 # Zadanie maturalne
+plik = open("pi.txt", "r")
+LiczbyPi = list(map(int, plik.read().split()))
 
 def Zad_3_1():
-    plik = open("pi.txt", "r")
-    LiczbyPi = list(map(int, plik.read().split()))
-
     for i in range(90):
         liczba = LiczbyPi[i] * 10 + LiczbyPi[i + 1]
         if liczba > 90:
             print(liczba)
 
-def Zad_3_2():
+def Zad_3_2_01():
     T = [0] * 100
 
     for i in range(len(LiczbyPi) - 1):
@@ -162,3 +162,7 @@ def Zad_3_2():
     else:
         print(f"Najmniej wystąpień ma: 0{T.index(mini)} {mini}")
     print(f"Najwięcej wystąpień ma: {T.index(maks)} {maks}")
+
+def Zad_3_2_02():
+    
+plik.close()
