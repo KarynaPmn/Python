@@ -42,6 +42,7 @@ def SumaCyfr(s):
             a //= 10
 
     return suma
+    
 def Zad_3(Ciag):
     n = len(Ciag)
 
@@ -134,6 +135,7 @@ def NajdluzszyCiagJestRosnacy(C):
             aktualnaDlugosc = 1
 
     return C[p : p + maksDlugosc]
+    
 def Zad_12():
     print(NajdluzszyCiagJestRosnacy(Ciag))
 plik.close()
