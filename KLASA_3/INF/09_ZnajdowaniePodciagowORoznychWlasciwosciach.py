@@ -139,12 +139,11 @@ def Zad_12():
 
 # Zadanie maturalne
 
-# Nie działa
 def Zad_3_1():
     plik = open("pi.txt", "r")
     LiczbyPi = list(map(int, plik.read().split()))
 
-    for i in range(len(LiczbyPi) - 1):
+    for i in range(90):
         liczba = LiczbyPi[i] * 10 + LiczbyPi[i + 1]
         if liczba > 90:
             print(liczba)
