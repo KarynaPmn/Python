@@ -148,7 +148,7 @@ def Zad_3_1():
         if liczba > 90:
             print(liczba)
 
-def Zad_3_2_01():
+def Zad_3_2():
     T = [0] * 100
 
     for i in range(len(LiczbyPi) - 1):
@@ -163,6 +163,4 @@ def Zad_3_2_01():
         print(f"Najmniej wystąpień ma: 0{T.index(mini)} {mini}")
     print(f"Najwięcej wystąpień ma: {T.index(maks)} {maks}")
 
-def Zad_3_2_02():
-    
 plik.close()
