@@ -144,13 +144,13 @@ plik.close()
 plik = open("pi.txt", "r")
 LiczbyPi = list(map(int, plik.read().split()))
 
-def Zad_3_1():
+def ZadM_3_1():
     for i in range(90):
         liczba = LiczbyPi[i] * 10 + LiczbyPi[i + 1]
         if liczba > 90:
             print(liczba)
 
-def Zad_3_2():
+def ZadM_3_2():
     T = [0] * 100
 
     for i in range(len(LiczbyPi) - 1):
