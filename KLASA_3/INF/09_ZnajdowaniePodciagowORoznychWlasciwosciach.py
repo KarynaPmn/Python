@@ -166,3 +166,36 @@ def ZadM_3_2():
     print(f"Najwięcej wystąpień ma: {T.index(maks)} {maks}")
 
 plik.close()
+
+### ??? ###
+plik = open("pi.txt", "r")
+LiczbyPi = list(map(int, plik.read().split()))
+
+def CzyRosnaceMalejace(Ciag):
+    czyMaleje = False
+    n = len(Ciag)
+    
+    if n < 4 or Ciag[1] <= Ciag[0]:
+        return False
+    for i in range(1, n - 1):
+        if Ciag[i + 1] > Ciag[i]:
+            if czyMaleje:
+                return False
+        elif Ciag[i + 1] < Ciag[i]:
+            czyMaleje = True
+        elif Ciag[i + 1] == Ciag[i]:
+            if czyMaleje == False:
+                czyMaleje = True
+            else:
+                return True
+    
+    return True
+                   
+def ZadM_3_4():
+    czyRosnie = True
+    n = len(LiczbyPi)
+    
+    for i in range(n):
+        j = i + 4
+        while CzyRosnaceMalejace(LiczbyPi[i:j]):
+            #
