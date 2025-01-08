@@ -192,10 +192,24 @@ def CzyRosnaceMalejace(Ciag):
     return True
                    
 def ZadM_3_4():
-    czyRosnie = True
-    n = len(LiczbyPi)
-    
-    for i in range(n):
-        j = i + 4
-        while CzyRosnaceMalejace(LiczbyPi[i:j]):
-            #
+    n = len(ciag)
+    maksimum = 3
+    poczatek = 0
+    poczatek_maks = 0
+    koniec_maks = 0
+    czy_rosnie = True
+    for i in range(1,n):
+        if not ciag[i]>ciag[i-1]:
+            czy_rosnie = False
+        else:
+            if ciag[i] > ciag[i - 1]:
+                czy_rosnie = True
+                print(ciag[poczatek:i])
+                if czy_rosnąco_malejący(ciag[poczatek:i]):
+                    if i-poczatek > maksimum:
+                        maksimum = i-poczatek
+                        poczatek_maks=poczatek
+                        koniec_maks = i-1
+                poczatek=i-1
+    print(poczatek_maks+1)
+    print(*ciag[poczatek_maks:koniec_maks+1],sep="")
