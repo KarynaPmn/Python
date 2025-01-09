@@ -8,7 +8,7 @@ def Zad_1(Ciag):
 
     for i in range(len(Ciag) - 2):
         suma = Ciag[i] + Ciag[i + 1] + Ciag[i + 2]
-        print(suma)
+
         if maksSuma < suma:
             maksSuma = suma
 
