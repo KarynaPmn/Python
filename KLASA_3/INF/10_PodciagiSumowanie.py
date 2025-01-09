@@ -1,7 +1,6 @@
 plik = open("ciagi.txt", "r")
 Ciag = list(map(int, plik.read().split()))
 
-# Zad 1
 def Zad_1(Ciag):
     maksSuma = 0
     suma = 0
@@ -27,3 +26,19 @@ def Zad_2(Ciag):
             T = [Ciag[i], Ciag[i + 1], Ciag[i + 2]]
 
     print(T)
+
+def Zad_3(Ciag):
+    maksSuma = 0
+    suma = 0
+    T = []
+    Temp = []
+
+    for i in range(len(Ciag) - 1):
+        Temp = Ciag[i : len(Ciag) - 1]
+        suma = sum(Temp)
+
+        if maksSuma < suma:
+            maksSuma = suma
+            T = Temp
+
+    print(len(T))
