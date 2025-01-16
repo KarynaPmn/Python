@@ -43,7 +43,7 @@ def Zad_3(Ciag):
 
     print(len(T))
     
-def Zad_5(Ciag):
+def Zad_4(Ciag):
     maksSuma = 0
     aktSuma = 0
     n = len(Ciag)
