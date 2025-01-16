@@ -1,4 +1,4 @@
-plik = open("ciagi.txt", "r")
+plik = open("ciag.txt", "r")
 Ciag = list(map(int, plik.read().split()))
 
 def Zad_1(Ciag):
@@ -42,7 +42,7 @@ def Zad_3(Ciag):
             T = Temp
 
     print(len(T))
-    
+
 def Zad_4(Ciag):
     maksSuma = 0
     aktSuma = 0
@@ -57,3 +57,25 @@ def Zad_4(Ciag):
             maksSuma = aktSuma
     
     print(maksSuma)
+
+def Zad_5(Ciag):
+    maksSuma = 0
+    aktSuma = 0
+    aktPocz = 0
+    maksKon = 0
+    maksPocz = 0
+    
+    n = len(Ciag)
+
+    for i in range(n):
+        aktSuma += Ciag[i]
+
+        if aktSuma < 0:
+            aktSuma = 0
+            aktPocz = i + 1
+        elif aktSuma > maksSuma:
+            maksSuma = aktSuma
+            maksPocz = aktPocz
+            maksKon = i
+    
+    print(maksSuma, Ciag[maksPocz : maksKon + 1])
