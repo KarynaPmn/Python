@@ -42,3 +42,18 @@ def Zad_3(Ciag):
             T = Temp
 
     print(len(T))
+    
+def Zad_5(Ciag):
+    maksSuma = 0
+    aktSuma = 0
+    n = len(Ciag)
+
+    for i in range(n):
+        aktSuma += Ciag[i]
+
+        if aktSuma < 0:
+            aktSuma = 0
+        elif aktSuma > maksSuma:
+            maksSuma = aktSuma
+    
+    print(maksSuma)
