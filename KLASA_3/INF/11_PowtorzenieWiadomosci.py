@@ -18,7 +18,7 @@ def Zad_4():
     dl_max = 0
 
     for i in range(1, n):
-        if (ciag[i] > ciag[i - 1]):
+        if (ciag[i] >= ciag[i - 1]):
             dl += 1
         else:
             if (dl > dl_max):
