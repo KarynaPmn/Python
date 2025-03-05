@@ -23,7 +23,9 @@ def Zad_4():
         else:
             if (dl > dl_max):
                 dl_max = dl
-                dl = 1
+            dl = 1
+    if (dl > dl_max):
+        dl_max = dl
 
     plik.close()
     print(dl_max)
