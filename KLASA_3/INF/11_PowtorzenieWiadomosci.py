@@ -30,6 +30,18 @@ def Zad_4():
     plik.close()
     print(dl_max)
 
+def Zad_5():
+    with open("ciag.txt", "r") as file:
+        ciag = list(map(int, file.read().split()))
+
+    maxSuma = ciag[0]
+    n = len(ciag)
+    for pocz in range(n):
+        suma = sum(ciag[pocz:pocz + 3])
+        if (suma > maxSuma):
+            maxSuma = suma
+    print(maxSuma)
+
 def Zad_6():
     with open("ciag.txt", "r") as file:
         ciag = list(map(int, file.read().split()))
