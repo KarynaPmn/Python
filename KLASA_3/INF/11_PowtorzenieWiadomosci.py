@@ -10,6 +10,20 @@ def Zad_2():
 
     print(w) # 43
 
+def Zad_3():
+    Ciag = list(map(int, input("Podaj ciąg: ").split(' ')))
+
+    czyRosnący = True
+    for i in range(len(Ciag) - 1):
+        if (Ciag[i] > Ciag[i + 1]):
+            czyRosnący = False
+            break
+    
+    if (czyRosnący):
+        print("tak")
+    else:
+        print("nie")
+
 def Zad_4():
     plik = open("liczby.txt", "r")
     ciag = list(map(int, plik.readline().split()))
@@ -54,3 +68,15 @@ def Zad_6():
             if (suma > maxSuma):
                 maxSuma = suma
     print(maxSuma)
+
+def Zad_7():
+    plik = open("Sprawdzian_2/ciagi.txt", "r")
+    ciag = list(map(int, plik.read().split()))
+
+    n = len(ciag)
+    for pocz in range(n - 2):
+        suma = sum(ciag[pocz : pocz + 3])
+        if (suma == 10):
+            print(ciag[pocz : pocz + 3])
+
+    plik.close()
