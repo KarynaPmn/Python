@@ -1,3 +1,5 @@
+import math
+
 ### Przykład 1. ###
 class Prostokat:
     def __init__(self, dlugosc, szerokosc):
@@ -68,3 +70,36 @@ def Zad_5():
 
     osoba.powitanie()
     osoba.informacje()
+
+class Trojkat:
+    a = 0
+    b = 0
+    c = 0
+    wysokosc = 0
+
+    def __init__(self, a, b, c, wysokosc):
+        self.a = a
+        self.b = b
+        self.c = c
+        self.wysokosc = wysokosc
+
+### Nie działa poprawnie!!! 
+    def poleHerona(self):
+        p = (self.a + self.b + self.c) / 2
+        pole = math.sqrt(p * (p - self.a) * (p - self.b) * (p - self.c))
+        print(f"Pole trójkąta: {pole}\n")
+##
+    
+    def pole(self):
+        pole = (self.a * self.wysokosc) / 2
+        print(f"Pole trójkąta: {pole}\n")
+
+    def obwod(self):
+        obwod = self.a + self.b + self.c
+        print(f"Obwód trójkąta: {obwod}\n")
+
+def Zad_6():
+    trojkat = Trojkat(20, 23, 21, 5) # 24
+
+    trojkat.pole()
+    trojkat.obwod()
