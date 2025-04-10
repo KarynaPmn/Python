@@ -42,3 +42,29 @@ def Zad_4():
     prostokat.b = int(input("Podaj b: "))
 
     print("Pole prostokąta wynosi:", prostokat.pole())
+
+class Osoba:
+    imie = ""
+    nazwisko = ""
+    wzrost = 0
+    waga = 0
+
+    def __init__(self, imie, nazwisko, wzrost, waga):
+        self.imie = imie
+        self.nazwisko = nazwisko
+        self.wzrost = wzrost
+        self.waga = waga
+
+    def powitanie(self):
+        print(f"Witaj {self.imie} {self.nazwisko}!\n")
+
+    def informacje(self):
+        print(f"Imię i nazwisko: {self.imie} {self.nazwisko}")
+        print(f"Wzrost: {self.wzrost}")
+        print(f"Waga: {self.waga}\n")
+
+def Zad_5():
+    osoba = Osoba("Liam", "Mairi", 185, 93)
+
+    osoba.powitanie()
+    osoba.informacje()
