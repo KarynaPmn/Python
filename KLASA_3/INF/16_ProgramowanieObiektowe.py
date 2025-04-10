@@ -36,7 +36,7 @@ class Prostokad_3:
     def pole(self):
         return self.a * self.b
 
-def Zad_3():
+def Zad_4():
     prostokat = Prostokad_3()
     prostokat.a = int(input("Podaj a: "))
     prostokat.b = int(input("Podaj b: "))
