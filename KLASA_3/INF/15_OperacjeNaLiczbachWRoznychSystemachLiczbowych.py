@@ -56,7 +56,7 @@ def Zad_3_2():
     liczba2 = input("Podaj liczbę: ")
     suma = toDec(podstawa, liczba1) + toDec(podstawa, liczba2)
 
-    wynik = convertToP(suma)
+    wynik = DecToP(suma)
     print(wynik)
 
 
@@ -77,6 +77,24 @@ def toDec(p, liczba):
         if (ulamek[i] == "1"):
             wynik += p ** (-i - 1)
 
+    return wynik
+
+def PtoDec(liczba_str, p):
+    l = liczba_str[::-1]
+    wynik = 0
+
+    for i in range(len(l)):
+        cyfra = int(l[i])
+        wynik += cyfra * p**i
+    return wynik
+
+def DecToP(liczba, p):
+    if liczba == 0:
+        return "0"
+    wynik = ""
+    while liczba > 0:
+        wynik = str(liczba % p) + wynik
+        liczba //= p
     return wynik
 
 def convertToP(liczba):
