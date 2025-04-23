@@ -48,7 +48,6 @@ def Zad_3_1():
         suma = liczba1 + liczba2
         print(bin(suma)[2:])
 
-# !!! nie dokońcozone
 # Wersja bez funkcji wbudowanych
 def Zad_3_2():
     podstawa = int(input("Podaj podstawę: "))
