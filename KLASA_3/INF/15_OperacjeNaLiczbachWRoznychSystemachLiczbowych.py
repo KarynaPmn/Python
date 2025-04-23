@@ -49,54 +49,33 @@ def Zad_3_1():
         print(bin(suma)[2:])
 
 # Wersja bez funkcji wbudowanych
-def Zad_3_2():
-    podstawa = int(input("Podaj podstawę: "))
-    liczba1 = input("Podaj liczbę: ")
-    liczba2 = input("Podaj liczbę: ")
-    suma = toDec(podstawa, liczba1) + toDec(podstawa, liczba2)
-
-    wynik = DecToP(suma)
-    print(wynik)
-
-
-def toDec(p, liczba):
-    czesci = liczba.split(',')
-    calkowiata = czesci[0]
-    ulamek = czesci[1]
-    dl_calk = len(calkowiata)
-    wynik = 0
-    odwrocona = calkowiata[:: -1]
-
-    for i in range(dl_calk):
-        if (odwrocona[i] == "1"):
-            wynik += p ** (i)
-
-    dl_ulam = len(ulamek)
-    for i in range(dl_ulam):
-        if (ulamek[i] == "1"):
-            wynik += p ** (-i - 1)
-
-    return wynik
-
-def PtoDec(liczba_str, p):
-    l = liczba_str[::-1]
-    wynik = 0
-
-    for i in range(len(l)):
-        cyfra = int(l[i])
-        wynik += cyfra * p**i
-    return wynik
-
-def DecToP(liczba, p):
+def PtoDec(liczba, p):
     if liczba == 0:
         return "0"
     wynik = ""
     while liczba > 0:
-        wynik = str(liczba % p) + wynik
+        cyfra = str(liczba % p)
+        if (int(cyfra) > 9):
+            match int(cyfra):
+                case 10:
+                    cyfra = "A"
+                case 11:
+                    cyfra = "B"
+                case 12:
+                    cyfra = "C"
+                case 13:
+                    cyfra = "D"
+                case 14:
+                    cyfra = "E"
+                case 15:
+                    cyfra = "F" 
+
+        wynik = cyfra + wynik
         liczba //= p
     return wynik
 
-def convertToP(liczba):
-    pass
+def Zad_3_2():
+    p = int(input("Podaj podstawę: "))
+    liczba = int(input(f"Podaj liczbę dec: "))
 
-Zad_3_1()
+    print(f"Liczba o podstawie: {PtoDec(liczba, p)}")
