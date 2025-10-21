@@ -70,4 +70,36 @@ def Zad_2():
     print(suma)
         
 
-Zad_2()
+def Zad_3():
+    with open("macierz.txt", "r") as plik:
+        M = [list(map(int, line.split())) for line in plik]
+
+    for wiersz in M:
+        wiersz[2], wiersz[4] = wiersz[4], wiersz[2]
+
+    for wiersz in M:
+        for e in wiersz:
+            print(f"{e:2}", end=" ") # {e:2} -> drukuje liczbę w polu szerokości 2
+        print()
+
+def Zad_4():
+    with open("macierz.txt", "r") as plik:
+        M = [(list(map(int, line.split()))) for line in plik]
+
+    SumaWKolumnach = [0] * len(M)
+    for t in M:
+        for i in range(len(t)):
+            SumaWKolumnach[i] += t[i]
+    
+    print(SumaWKolumnach)
+
+    maxSuma = SumaWKolumnach[0]
+    maxSumaIndex = 0
+    for i in range(len(SumaWKolumnach)):
+        if SumaWKolumnach[i] > maxSuma:
+            maxSuma = SumaWKolumnach[i]
+            maxSumaIndex = i
+
+    print(maxSuma, " - ", maxSumaIndex)
+    
+
