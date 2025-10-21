@@ -33,6 +33,7 @@ def Zad_1():
             print(kwota, end=" ")
     print()
 
+
 def Zad_2():
     M = []
     suma = 0
@@ -40,8 +41,6 @@ def Zad_2():
     with open("macierz.txt", "r") as plik:
         M = [list(map(int, linia.split())) for linia in plik]
     
-    
-
     n = len(M)
     i = 0
     j = 0
@@ -68,7 +67,7 @@ def Zad_2():
         
     print(kierunek)
     print(suma)
-        
+
 
 def Zad_3():
     with open("macierz.txt", "r") as plik:
@@ -81,6 +80,7 @@ def Zad_3():
         for e in wiersz:
             print(f"{e:2}", end=" ") # {e:2} -> drukuje liczbę w polu szerokości 2
         print()
+
 
 def Zad_4():
     with open("macierz.txt", "r") as plik:
@@ -102,4 +102,3 @@ def Zad_4():
 
     print(maxSuma, " - ", maxSumaIndex)
     
-
