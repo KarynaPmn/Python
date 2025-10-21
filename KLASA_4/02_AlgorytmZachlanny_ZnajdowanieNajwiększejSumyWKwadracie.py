@@ -62,15 +62,28 @@ def Zad_4():
     for i in I:
         print(i[0], " ", i[1])
 
-# Nie zakończone !
 def Zad_5():
     n = int(input("Podaj n: "))
-    M = []
-    for i in range(n):
-        for j in range(n):
-            M[i][j].append(random.randint(1, 10))
+    M = [[random.randint(1, 10) for _ in range(n)] for _ in range(n)]
 
     for t in M:
-        print(t)
+        for e in t:
+            print(e, end="\t")
+        print()
 
-Zad_5()
+    i = 0
+    j = 0
+    suma = M[0][0]
+    while i < n - 1 or j < n - 1:
+        if i == n - 1:
+            j += 1
+        elif j == n - 1:
+            i += 1
+        elif M[i + 1][j] > M[i][j + 1]:
+            i += 1
+        else:
+            j += 1
+        
+        suma += M[i][i]
+
+    print("Największa suma: ", suma)
