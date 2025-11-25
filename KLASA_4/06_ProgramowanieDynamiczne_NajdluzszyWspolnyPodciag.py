@@ -34,6 +34,25 @@ def Zad_2():
 
 Zad_2()
 
+### Zadanie 5 ###
+
+def NWP_text(text_1, text_2):
+    text = ""
+    n, m = len(text_1), len(text_2)
+    D = [[0] * (n + 1) for _ in range(m + 1)]
+
+    for i in range(1, m + 1):
+        for j in range(1, n + 1):
+            if text_1[i - 1] == text_2[j - 1]:
+                D[i][j] = D[i - 1][j - 1] + 1
+                text += str(text_1[j - 1])
+            else:
+                D[i][j] = max(D[i - 1][j], D[i][j - 1])
+    print(text)
+
+def Zad_5():
+    NWP_text("qwert", "ertyu")
+
 ###
 def najdluzszy_wspolny_podciag(X, Y):
     # D = [[0] * (m + 1) for _ in range(n + 1)]
