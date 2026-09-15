@@ -17,8 +17,8 @@ def przestaw_rek(n):
 
     return w
 
-# Zad. 1.3
-def przestaw(n):
+# Zad. 1.3 - iteracyne
+def przestaw_1(n):
     wynik = 0
     mnoznik = 1
 
@@ -39,5 +39,75 @@ def przestaw(n):
 
     return wynik
 
-print(przestaw_rek(316245))
-print(przestaw(316245))
+# Zad. 1.3 - tylko operacje arytmetyczne
+def przestaw_2(n):
+    wynik = 0
+    mnoznik = 1
+
+    while n > 9:
+        para = n % 100
+        n //= 100
+
+        a = para // 10
+        b = para % 10
+
+        odwrocona = b*10 + a
+
+        wynik = wynik + odwrocona*mnoznik
+        mnoznik = mnoznik*100
+
+    if n > 0:
+        wynik = wynik + n*mnoznik
+
+    return wynik
+
+# Zad. 2.1
+def palindrom(text):
+    if text == text[::-1]:
+        return True
+
+    return False
+
+def Zad_2_1():
+    plik = open("symbole.txt", "r")
+
+    for line in plik:
+        line = line.rstrip()
+        if palindrom(line):
+            print(line)
+
+    plik.close()
+
+# Zad. 2.2
+def Zad_2_2():
+    plik = open("symbole.txt", "r")
+    symbole = []
+
+    for line in plik:
+        line = list(line.strip().strip())
+        symbole.append(line)
+
+    ile = 0
+
+    srodki = []
+
+    for i in range(1, len(symbole) - 1):
+        for j in range(1, len(symbole[1]) - 1):
+            srodek = symbole[i][j]
+
+            if (srodek == symbole[i-1][j-1]
+                and srodek == symbole[i-1][j]
+                and srodek == symbole[i-1][j+1]
+                and srodek == symbole[i][j-1]
+                and srodek == symbole[i][j+1]
+                and srodek == symbole[i+1][j-1]
+                and srodek == symbole[i+1][j]
+                and srodek == symbole[i+1][j+1]):
+                    ile += 1
+                    srodki.append((i + 1, j + 1))
+
+    print(ile)
+    print(*srodki[0]) # * - usuwa nawiasy
+    plik.close()
+
+Zad_2_2()
