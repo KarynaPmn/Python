@@ -110,4 +110,37 @@ def Zad_2_2():
     print(*srodki[0]) # * - usuwa nawiasy
     plik.close()
 
-Zad_2_2()
+# Zad 3.2
+def zad_3_2():
+    plik = open('dron.txt', 'r')
+    punkty = []
+    x = 0
+    y = 0
+    ile = 0
+
+    for linia in plik:
+        linia = linia.rstrip()
+        a, b = linia.split()
+        x = x + int(a)
+        y = y + int(b)
+
+        punkty.append([x, y])
+
+        # punkt a
+        if 0 < x < 5000 and 0 < y < 5000:
+            ile += 1
+
+    print(ile)
+
+    # punkt b
+    n = len(punkty)
+    for i in range(n):
+        for j in range(i + 1, n):
+            xs = (punkty[i][0] + punkty[j][0]) / 2
+            ys = (punkty[i][1] + punkty[j][1]) / 2
+
+            if [xs, ys] in punkty:
+                print(f"({punkty[i][0]},{punkty[i][1]}), ({xs},{ys}), ({punkty[j][0]},{punkty[j][1]})")
+
+    plik.close()
+    
