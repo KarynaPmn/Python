@@ -1,5 +1,4 @@
 # Zad. 1.1
-
 def przestaw_rek(n):
     r = n % 100
     a = r // 10
@@ -110,7 +109,82 @@ def Zad_2_2():
     print(*srodki[0]) # * - usuwa nawiasy
     plik.close()
 
-# Zad 3.2
+# Zad. 2.3
+symbole = {
+    "o": "0",
+    "+": "1",
+    "*": "2"
+}
+
+def zad_2_3():
+    plik = open("symbole.txt", "r")
+
+    max = 0
+    maxStr = ""
+
+    for line in plik:
+        line = line.strip()
+        konw = ""
+
+        for char in line:
+            konw += symbole[char]
+        liczba = int(konw, 3)
+
+        if max < liczba:
+            max = liczba
+            maxStr = line
+
+    plik.close()
+    
+    print(max, maxStr, sep=" ")
+
+
+# Zad. 2.4
+def DecToSymbol(liczba):
+    wynik = ""
+    s = "o+*"
+    while liczba > 0:
+        reszta = liczba % 3
+        liczba //= 3
+        wynik = s[reszta] + wynik
+    return wynik
+
+
+def zad_2_4():
+    plik = open("symbole.txt", "r")
+    suma = 0
+
+    for line in plik:
+        line = line.strip()
+        konw = ""
+        for char in line:
+            konw += symbole[char]
+        liczba = int(konw, 3)
+        suma += liczba
+
+    plik.close()
+
+    print(suma, DecToSymbol(suma), sep=" ")
+
+# Zad. 3.1
+def NWD(a, b):
+    while b > 0:
+        a, b = b, a % b
+    return a
+
+def zad_3_1():
+    plik = open('dron.txt', 'r')
+    ile = 0
+
+    for line in plik:
+        a, b = list(map(int, line.split()))
+        nwd = NWD(abs(a), abs(b))
+        if nwd > 1:
+            ile += 1
+
+    print(ile)
+
+# Zad. 3.2
 def zad_3_2():
     plik = open('dron.txt', 'r')
     punkty = []
