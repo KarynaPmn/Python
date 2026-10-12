@@ -134,9 +134,8 @@ def zad_2_3():
             max = liczba
             maxStr = line
 
-    plik.close()
-    
     print(max, maxStr, sep=" ")
+    plik.close()
 
 
 # Zad. 2.4
@@ -162,9 +161,8 @@ def zad_2_4():
         liczba = int(konw, 3)
         suma += liczba
 
-    plik.close()
-
     print(suma, DecToSymbol(suma), sep=" ")
+    plik.close()
 
 # Zad. 3.1
 def NWD(a, b):
@@ -183,6 +181,7 @@ def zad_3_1():
             ile += 1
 
     print(ile)
+    plik.close()
 
 # Zad. 3.2
 def zad_3_2():
